@@ -15,10 +15,9 @@ for line in sys.stdin:
 				minhour=datetime.strptime(time_list[0],'%H:%M:%S')
 				maxhour=datetime.strptime(time_list[1],'%H:%M:%S')
 				hours=maxhour-minhour
-				hours=hours.total_seconds()
-				hours=hours/3600
-				print "%s,%s,%.2f"%(driver,day,hours)
-			else:
+				hoursp=hours.seconds/3600.0
+				print "%s,%s,%.2f"%(driver,day,hoursp)
+			except:
 				pass
 		current_driver=driver
 		current_day=day
@@ -27,8 +26,7 @@ try:
 	minhour=datetime.strptime(time_list[0],'%H:%M:%S')
 	maxhour=datetime.strptime(time_list[1],'%H:%M:%S')
 	hours=maxhour-minhour
-	hours=hours.total_seconds()
-	hours=hours/3600
-	print "%s,%s,%.2f"%(driver,day,hours)
-else:
+	hoursp=hours.seconds/3600.0
+	print "%s,%s,%.2f"%(driver,day,hoursp)
+except:
 	pass
