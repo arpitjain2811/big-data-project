@@ -4,3 +4,7 @@
 .idea/.name
 
 *.iml
+
+*.csv
+
+q3/out.txt
