@@ -17,7 +17,7 @@ for line in sys.stdin:
         if len(l) == 11:
             #tag = "fare"
             if l[0] == "medallion":
-                attributes_trip = l
+                attributes_fare = l
                 continue
             else:
                 print("%s\t%f\t%d" % (l[1],float(l[8]),1))
