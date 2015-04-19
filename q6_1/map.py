@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import sys, os
+import datetime
 for line in sys.stdin:
     line=line.strip()
     values=line.split(',')
     if values[0]!='medallion':
-		day1,time1=values[5].split(' ')
-		day2,time2=values[6].split(' ')
-		print "%s,%s,%s"%(values[1],day1,time1)
-		print "%s,%s,%s"%(values[1],day2,time2)
+		starttime=datetime.datetime.strptime(values[5],'%Y-%m-%d %H:%M:%S')
+		endtime=starttime+datetime.timedelta(seconds=float(values[8]))
+		print "%s,%s,%s"%(values[1],datetime.datetime.strftime(starttime,'%Y-%m-%d'),datetime.datetime.strftime(starttime,'%H:%M:%S'))
+		print "%s,%s,%s"%(values[1],datetime.datetime.strftime(endtime,'%Y-%m-%d'),datetime.datetime.strftime(endtime,'%H:%M:%S'))
