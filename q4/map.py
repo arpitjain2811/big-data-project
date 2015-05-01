@@ -20,4 +20,4 @@ for line in sys.stdin:
                 attributes_trip = l
                 continue
             else:
-                print("%f\t%f\t%d" % (float(l[10]),float(l[11]),1))
+                print("%f\t%f\t%d" % (round(float(l[10]),3),round(float(l[11]),3),1))
