@@ -5,4 +5,4 @@ q4:
 q6:
 	hjs -D mapred.reduce.tasks=10 -file map.py -mapper map.py -file reduce.py -reducer reduce.py -input FOIL2010/trip_data*.csv -output q6_1_2010&
 extra:
-    hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -D mapreduce.job.reduces=10 -file extra/map.py -mapper extra/map.py -file extra/reduce.py -reducer extra/reduce.py -input /user/jx624/FOIL2013/trip_fare_*.csv  -output AverageTotal
+    hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -D mapreduce.job.reduces=10 -file extra/map.py -mapper extra/map.py -file extra/reduce.py -reducer extra/reduce.py -input /user/jx624/FOIL2013/trip_fare_*.csv  -output Total

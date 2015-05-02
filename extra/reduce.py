@@ -24,10 +24,10 @@ for line in sys.stdin:
     else:
         if current_hack:
             # output goes to STDOUT (stream data that the program writes)
-            print("%s\t%f" %( current_hack, current_total/current_num_trips ))
+            print("%s\t%f" %( current_hack, current_total ))
         current_hack = hack
         current_num_trips = count
         current_total = total
 
 if current_hack == hack:
-    print('%s\t%f' % (current_hack, current_total/current_num_trips))
+    print('%s\t%f' % (current_hack, current_total))
