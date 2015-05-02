@@ -29,7 +29,7 @@ for line in sys.stdin:
             elif current_total > 82000.0:
                 print("%s\t%s\t%f" %( current_hack,"above", current_total ))
             else:
-                print("%s\t%f" %( current_hack,"average" ,current_total ))
+                print("%s\t%s\t%f" %( current_hack,"average" ,current_total ))
 
         current_hack = hack
         current_num_trips = count
@@ -41,4 +41,4 @@ if current_hack == hack:
     elif current_total > 82000.0:
         print("%s\t%s\t%f" %( current_hack,"above", current_total ))
     else:
-        print("%s\t%f" %( current_hack,"average" ,current_total ))
+        print("%s\t%s\t%f" %( current_hack,"average" ,current_total ))
