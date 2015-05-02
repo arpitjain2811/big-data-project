@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # Trip Table
 # medallion             0
 # hack_license          1
@@ -27,7 +28,7 @@
 # tolls_amount          9
 # total_amount          10
 
-#!/usr/bin/python
+
 import sys
 import StringIO
 import csv
