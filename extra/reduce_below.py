@@ -8,7 +8,6 @@ current_num_trips = 0
 # input comes from STDIN (stream data that goes to the program)
 for line in sys.stdin:
     date, total_amount, num_trips = line.strip().split("\t")
-    print date
     try:
         total_amount = float(total_amount)
         num_trips = int(num_trips)
