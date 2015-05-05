@@ -51,6 +51,6 @@ for line in sys.stdin:
                 attributes_fare = l
                 continue
             else:
-                if l[1] == "2013000048":
+                if l[1] == "2013000073":
                     date = datetime.datetime.strptime(l[3], "%Y-%m-%d %H:%M:%S").date()
                     print("%s\t%f\t%d" % (str(date),float(l[10]),1))
