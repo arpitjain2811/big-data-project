@@ -9,7 +9,7 @@ extra:
 	cd ..;
 	hadoop fs -get Hacks_total;
 hack:
-	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -file Weather_data_corr/hack/map_below.py -mapper Weather_data_corr/hack/map_below.py -file Weather_data_corr/hack/reduce_below.py -reducer Weather_data_corr/hack/reduce_below.py -input /user/jx624/FOIL201*/trip_fare_*.csv  -output Hack_below_total
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -file Weather_data_corr/hack/map_hack.py -mapper Weather_data_corr/hack/map_hack.py -file Weather_data_corr/hack/reduce_hack.py -reducer Weather_data_corr/hack/reduce_hack.py -input /user/jx624/FOIL201*/trip_fare_*.csv  -output Hack_below_total
 	cd ..;
 	hadoop fs -get Hack_below_total;
 vendor:
