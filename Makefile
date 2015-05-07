@@ -17,6 +17,6 @@ vendor:
 	cd ..;
 	hadoop fs -get Vendor_total;
 tip:
-	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -file Weather_data_corr/tip/map_tip.py -mapper Weather_data_corr/tip/map_tip.py -file Weather_data_corr/tip/reduce.py -reducer Weather_data_corr/tip/reduce.py -input /user/jx624/FOIL201*/trip_fare_*.csv  -output Tip_total
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -D mapreduce.job.reduces=5 -file Weather_data_corr/tip/map_tip.py -mapper Weather_data_corr/tip/map_tip.py -file Weather_data_corr/tip/reduce.py -reducer Weather_data_corr/tip/reduce.py -input /user/jx624/FOIL201*/trip_fare_*.csv  -output Tip_total
 	cd ..;
 	hadoop fs -get Tip_total;

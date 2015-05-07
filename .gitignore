@@ -13,3 +13,5 @@ q3/out.txt
 Results/AverageTip/_SUCCESS
 
 Results/AverageTip/part-00000
+
+*.ipynb
