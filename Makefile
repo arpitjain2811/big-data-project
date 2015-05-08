@@ -23,5 +23,3 @@ tip:
 q1c:
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files q1c/map_pickup.py,q1c/reduce.py -mapper map_pickup.py  -reducer reduce.py -input /user/jx624/FOIL2013census/  -output PickupDist
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files q1c/map_dropoff.py,q1c/reduce.py -mapper map_dropoff.py  -reducer reduce.py -input /user/jx624/FOIL2013census/  -output DropoffDist
-	cd ..;
-	hadoop fs -get Tip_total;
