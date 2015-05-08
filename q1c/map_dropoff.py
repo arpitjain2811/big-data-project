@@ -55,7 +55,7 @@ for line in sys.stdin:
                 attributes_fare = l
                 continue
             else:
-                H[l[15]] += 1
+                H[str(l[15])] += 1
 
 for i in H.keys():
     print("%s\t%d"%(i,H[i]))
