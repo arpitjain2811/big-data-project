@@ -35,7 +35,7 @@ def parseInput():
 def mapper():
     index = rtree.Index()
     neighborhoods = []
-    readNeighborhood('tract.shp', index, neighborhoods)
+    readNeighborhood('cb_2013_36_tract_500k.shp', index, neighborhoods)
     agg = {}
     for values in parseInput():
         pickup_location = (float(values[10]), float(values[11]))
