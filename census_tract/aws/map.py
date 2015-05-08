@@ -38,21 +38,26 @@ def mapper():
     readNeighborhood('cb_2013_36_tract_500k.shp', index, neighborhoods)
     agg = {}
     for values in parseInput():
-        pickup_location = (float(values[10]), float(values[11]))
-        dropoff_location = (float(values[12]), float(values[13]))
-        dropoff_neighborhood = findNeighborhood(dropoff_location, index, neighborhoods)
-        pickup_neighborhood = findNeighborhood(pickup_location, index, neighborhoods)
-        if pickup_neighborhood!=-1:
-            pickup_name = neighborhoods[pickup_neighborhood][0]
-        else:
-            pickup_name = "UNKNOWN"
-        if dropoff_neighborhood!=-1:
-            dropoff_name = neighborhoods[dropoff_neighborhood][0]
-        else:
-            dropoff_name = "UNKNOWN"    
-        values.append(str(pickup_name))
-        values.append(str(dropoff_name))
-        print ','.join(values)
+        try:
+            pickup_location = (float(values[10]), float(values[11]))
+            dropoff_location = (float(values[12]), float(values[13]))
+            dropoff_neighborhood = findNeighborhood(dropoff_location, index, neighborhoods)
+            pickup_neighborhood = findNeighborhood(pickup_location, index, neighborhoods)
+            if pickup_neighborhood!=-1:
+                pickup_name = neighborhoods[pickup_neighborhood][0]
+            else:
+                pickup_name = "UNKNOWN"
+            if dropoff_neighborhood!=-1:
+                dropoff_name = neighborhoods[dropoff_neighborhood][0]
+            else:
+                dropoff_name = "UNKNOWN"    
+            values.append(str(pickup_name))
+            values.append(str(dropoff_name))
+            print ','.join(values)
+        except:
+            values.append("UNKNOWN")
+            values.append("UNKNOWN")
+            print ','.join(values)
     
 if __name__=='__main__':
     mapper()
