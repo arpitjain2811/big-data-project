@@ -9,4 +9,4 @@ for line in sys.stdin:
     # split the line into words
     driver,date,hour = line.split(',')
     hour=float(hour)
-    print '%.1f\t%s' % (hour, 1)
+    print '%d\t%s' % (hour, 1)

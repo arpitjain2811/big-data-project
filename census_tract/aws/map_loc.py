@@ -17,12 +17,12 @@ def findNeighborhood(location, index, neighborhoods):
 def readNeighborhood(shapeFilename, index, neighborhoods):
     sf = shapefile.Reader(shapeFilename)
     for sr in sf.shapeRecords():
-        if sr.record[1] not in ['New York', 'Kings', 'Queens', 'Bronx']: continue
+        if sr.record[1] not in ['005', '047', '061', '081','085']: continue
         paths = map(Path, numpy.split(sr.shape.points, sr.shape.parts[1:]))
         bbox = paths[0].get_extents()
         map(bbox.update_from_path, paths[1:])
         index.insert(len(neighborhoods), list(bbox.get_points()[0])+list(bbox.get_points()[1]))
-        neighborhoods.append((sr.record[3], paths))
+        neighborhoods.append((sr.record[2], paths))
     neighborhoods.append(('UNKNOWN', None))
 
 def parseInput():
@@ -35,7 +35,7 @@ def parseInput():
 def mapper():
     index = rtree.Index()
     neighborhoods = []
-    readNeighborhood('ZillowNeighborhoods-NY.shp', index, neighborhoods)
+    readNeighborhood('tract.shp', index, neighborhoods)
     agg = {}
     for values in parseInput():
         pickup_location = (float(values[10]), float(values[11]))
