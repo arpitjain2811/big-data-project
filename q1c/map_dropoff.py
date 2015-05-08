@@ -14,6 +14,7 @@
 # pickup_latitude       11
 # dropoff_longitude     12
 # dropoff_latitude      13
+# pickup_
 
 # Fare Table
 # medallion             0
@@ -54,7 +55,7 @@ for line in sys.stdin:
                 attributes_fare = l
                 continue
             else:
-                H[int(l[15])] += 1
+                H[l[15]] += 1
 
 for i in H.keys():
-    print("%d\t%d"%(i,H[i]))
+    print("%s\t%d"%(i,H[i]))
