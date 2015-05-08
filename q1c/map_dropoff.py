@@ -55,4 +55,4 @@ for line in sys.stdin:
                 H[str(l[15])] += 1
 
 for i in H.keys():
-    print("%s\t%d"%(i,H[i]))
+    print("%s%d"%(i,H[i]))
