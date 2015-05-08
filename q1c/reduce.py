@@ -9,8 +9,12 @@ current_num_trips = 0
 # input comes from STDIN (stream data that goes to the program)
 for line in sys.stdin:
 
-    name , count = line.strip().split("\t")
+    try:
+        name , count = line.strip().split("\t")
+    except:
+        continue    
 
+        
     try:
         count = int(count)
     except ValueError:
