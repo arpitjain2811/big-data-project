@@ -2,6 +2,7 @@
 
 import sys
 
+name = None
 current_name = None
 current_num_trips = 0
 
