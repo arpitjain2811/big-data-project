@@ -15,3 +15,11 @@ Results/AverageTip/_SUCCESS
 Results/AverageTip/part-00000
 
 *.ipynb
+
+data_small/trips_sunday.csv.txt
+
+uncommit/*
+
+*.crc
+
+*.py
