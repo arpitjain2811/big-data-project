@@ -14,7 +14,6 @@
 # pickup_latitude       11
 # dropoff_longitude     12
 # dropoff_latitude      13
-# pickup_
 
 # Fare Table
 # medallion             0
@@ -43,12 +42,10 @@ for line in sys.stdin:
     csv_file = StringIO.StringIO(line)
     csv_reader = csv.reader(csv_file)
 
-
     for l in csv_reader:
 
         #l = line.strip().split(',')
         # Data from vehicle table
-
         if len(l) == 16:
             #tag = "trip"
             if l[0] == "medallion":
