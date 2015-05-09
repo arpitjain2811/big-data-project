@@ -15,20 +15,14 @@ for line in sys.stdin:
 		count+=1
 	else:
 		if pickup and dropoff:
-			if count==1:
-				pass
-			else:
-				print pickup+','+dropoff+','+str(dur/count)+','+str(count)
-				pickup=pickup_neighbor
-				dropoff=dropoff_neighbor
-				dur=trip_dur
-				count=1
+			print pickup+','+dropoff+','+str(dur/count)+','+str(count)
+			pickup=pickup_neighbor
+			dropoff=dropoff_neighbor
+			dur=trip_dur
+			count=1
 		else:
 			pickup=pickup_neighbor
 			dropoff=dropoff_neighbor
 			dur+=trip_dur
 			count+=1
-if count==1:
-	pass
-else:
-	print pickup+','+dropoff+','+str(dur/count)+','+str(count)
+print pickup+','+dropoff+','+str(dur/count)+','+str(count)
