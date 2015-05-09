@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-k = 4
+k = 10
 name = None
 current_name = None
 current_placeidset = []
