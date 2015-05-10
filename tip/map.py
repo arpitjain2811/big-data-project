@@ -55,8 +55,11 @@ for line in sys.stdin:
                 attributes_fare = l
                 continue
             else:
-                date = datetime.datetime.strptime(l[3], "%Y-%m-%d %H:%M:%S").date()
-                key = str(get_key(date))
-                H[key] = H.get(key,0.0) + float(l[8])
+                try:
+                    date = datetime.datetime.strptime(l[3], "%Y-%m-%d %H:%M:%S").date()
+                    key = str(get_key(date))
+                    H[key] = H.get(key,0.0) + float(l[8])
+                except:
+                    continue                    
 for i in H.keys():
     print("%s\t%f"%(i,H[i]))
