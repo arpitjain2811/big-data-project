@@ -30,4 +30,6 @@ numtrips:
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/weeknumber/map.py,num_trips/weeknumber/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_weeknumber
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/date/map.py,num_trips/date/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_date
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/daynumber/map.py,num_trips/daynumber/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_daynumber
-	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/weekendweekday/map.py,num_trips/weekendweekday/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_weekendweekday	
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files tip/map.py,tip/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_weekendweekday
+tip:
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/weekendweekday/map.py,num_trips/weekendweekday/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/FOIL*/trip_fare_*.csv  -output tips_day		
