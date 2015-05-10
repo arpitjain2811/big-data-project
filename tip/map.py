@@ -58,7 +58,8 @@ for line in sys.stdin:
                 try:
                     date = datetime.datetime.strptime(l[3], "%Y-%m-%d %H:%M:%S").date()
                     key = str(get_key(date))
-                    H[key] = H.get(key,0.0) + float(l[8])
+                    tip = max(0.0,float(l[8]))
+                    H[key] = H.get(key,0.0) + tip
                 except:
                     continue                    
 for i in H.keys():
