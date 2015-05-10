@@ -25,3 +25,9 @@ q1c:
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files q1c/map_dropoff.py,q1c/reduce.py -mapper map_dropoff.py  -reducer reduce.py -input /user/jx624/FOIL2013census/  -output DropoffDist
 q1b:
 	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files q1b/map.py,q1b/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/FOIL2013census/  -output Prefneighborhood
+numtrips:
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/month/map.py,num_trips/month/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_month
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/weeknumber/map.py,num_trips/weeknumber/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_weeknumber
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/date/map.py,num_trips/date/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_date
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/daynumber/map.py,num_trips/daynumber/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_daynumber
+	hadoop jar /usr/hdp/2.2.0.0-2041/hadoop-mapreduce/hadoop-streaming-2.6.0.2.2.0.0-2041.jar -files num_trips/weekendweekday/map.py,num_trips/weekendweekday/reduce.py -mapper map.py  -reducer reduce.py -input /user/jx624/clean_2013  -output numtrips_weekendweekday	
