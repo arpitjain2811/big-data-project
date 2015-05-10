@@ -61,7 +61,10 @@ for line in sys.stdin:
                 #date = datetime.datetime.strptime(l[5], "%Y-%m-%d %H:%M:%S").date()
                 key = l[1]
                 H[key] = H[key] + 1
-                ToA[key] = ToA[key] + max(0,l[10])
-                TiA[key] = TiA[key] + max(0,l[8])
+                try:
+                    ToA[key] = ToA[key] + max(0,float(l[10]))
+                    TiA[key] = TiA[key] + max(0,float(l[8]))
+                except :
+                    continue;        
 for i in H.keys():
     print("%s\t%d\t%f\t%f"%(i,H[i],ToA[i],TiA[i]))

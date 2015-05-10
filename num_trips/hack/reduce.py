@@ -23,11 +23,11 @@ for line in sys.stdin:
     else:
         if current_hack:
             # output goes to STDOUT (stream data that the program writes)
-            print("%s\t%d" %( current_hack,current_num_trips,current_total,current_total/current_num_trips,current_tip,current_tip/current_num_trips ))
+            print("%s\t%d\t%f\t%f\t%f\t%f" %( current_hack,current_num_trips,current_total,current_total/current_num_trips,current_tip,current_tip/current_num_trips ))
         current_hack = hack
         current_num_trips = num_trips
         current_total = total
         current_tip = tip
 
 if current_hack == hack:
-    print("%s\t%d" %( current_hack,current_num_trips,current_total,current_total/current_num_trips,current_tip,current_tip/current_num_trips ))
+    print("%s\t%d\t%f\t%f\t%f\t%f" %( current_hack,current_num_trips,current_total,current_total/current_num_trips,current_tip,current_tip/current_num_trips ))
