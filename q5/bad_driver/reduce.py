@@ -2,7 +2,7 @@
 
 import sys
 
-current_diver = None
+current_driver = None
 current_score = 0
 
 # input comes from STDIN (stream data that goes to the program)
@@ -23,4 +23,4 @@ for line in sys.stdin:
         current_score = score
 
 if current_driver == driver:
-    print("%s,%f" %( current_driver,current_score ))
+    print("%s,%f" %(current_driver,current_score ))
