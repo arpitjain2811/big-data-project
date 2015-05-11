@@ -1,0 +1,1 @@
+hack	Total_number_of_trips	Total_amount	Avg_total	Total_tip 	Avg_tip	
