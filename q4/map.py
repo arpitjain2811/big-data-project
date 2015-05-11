@@ -59,6 +59,8 @@ for line in sys.stdin:
                 try:
                     pickup = l[14]
                     dropoff = l[15]
+                    if pickup =="UNKNOW" || dropoff=="UNKNOW":
+                        continue;
                     key = pickup + '|' + dropoff
                     H[key] = H.get(key,0.0) + float(l[9])
                     N[key] = N.get(key,0.0) + 1
