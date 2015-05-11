@@ -39,28 +39,21 @@ def mapper():
     agg = {}
     for values in parseInput():
         try:
-            try:
-                p1 = float(values[10])
-                p2 = float(values[11])
-                d1 = float(values[12])
-                d2 = float(values[13])
-            except ValueError:
-                continue;
-                pickup_location = (p1, p2)
-                dropoff_location = (d1, d2)
-                dropoff_neighborhood = findNeighborhood(dropoff_location, index, neighborhoods)
-                pickup_neighborhood = findNeighborhood(pickup_location, index, neighborhoods)
-                if pickup_neighborhood!=-1:
-                    pickup_name = neighborhoods[pickup_neighborhood][0]
-                else:
-                    pickup_name = "UNKNOWN"
-                if dropoff_neighborhood!=-1:
-                    dropoff_name = neighborhoods[dropoff_neighborhood][0]
-                else:
-                    dropoff_name = "UNKNOWN"    
-                values.append(str(pickup_name))
-                values.append(str(dropoff_name))
-                print ','.join(values)
+            pickup_location = (float(values[10]), float(values[11]))
+            dropoff_location = (float(values[12]), float(values[13]))
+            dropoff_neighborhood = findNeighborhood(dropoff_location, index, neighborhoods)
+            pickup_neighborhood = findNeighborhood(pickup_location, index, neighborhoods)
+            if pickup_neighborhood!=-1:
+                pickup_name = neighborhoods[pickup_neighborhood][0]
+            else:
+                pickup_name = "UNKNOWN"
+            if dropoff_neighborhood!=-1:
+                dropoff_name = neighborhoods[dropoff_neighborhood][0]
+            else:
+                dropoff_name = "UNKNOWN"    
+            values.append(str(pickup_name))
+            values.append(str(dropoff_name))
+            print ','.join(values)
         except :
             continue;
     
