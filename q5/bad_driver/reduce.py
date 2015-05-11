@@ -1,28 +1,26 @@
-#!/usr/bin/env python
-import sys 
-import StringIO
-import csv     
-pickup=None
-dropoff=None
-dur=.0
-count=0
+#!/usr/bin/python
+
+import sys
+
+current_diver = None
+current_score = 0
+
+# input comes from STDIN (stream data that goes to the program)
 for line in sys.stdin:
-	driver,pickup_neighbor,dropoff_neighbor,trip_dur=line.strip('\t').split(',')
-	trip_dur=float(trip_dur)
-	# print trip_dur,count
-	if pickup==pickup_neighbor and dropoff==dropoff_neighbor:
-		dur+=trip_dur
-		count+=1
-	else:
-		if pickup and dropoff:
-			print pickup+','+dropoff+','+str(dur/count)+','+str(count)
-			pickup=pickup_neighbor
-			dropoff=dropoff_neighbor
-			dur=trip_dur
-			count=1
-		else:
-			pickup=pickup_neighbor
-			dropoff=dropoff_neighbor
-			dur+=trip_dur
-			count+=1
-print pickup+','+dropoff+','+str(dur/count)+','+str(count)
+    driver,score= line.strip().split(",")
+    try:
+        score= float(score)
+    except ValueError:
+        continue
+
+    if driver == current_driver:
+        current_score += score
+    else:
+        if current_driver:
+            # output goes to STDOUT (stream data that the program writes)
+            print("%s,%f" %( current_driver,current_score ))
+        current_driver = driver
+        current_score = score
+
+if current_driver == driver:
+    print("%s,%f" %( current_driver,current_score ))
