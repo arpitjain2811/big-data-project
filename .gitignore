@@ -23,3 +23,5 @@ uncommit/*
 *.crc
 
 q1b/similardrivers
+
+Results/AverageTip/part-00000.tsv
